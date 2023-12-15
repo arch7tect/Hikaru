@@ -1,5 +1,6 @@
-Hikaru's Probability of Winning 43 Consecutive Online Games on Chess.com
+# Hikaru on Chess.com
 
-100%|██████████| 3000/3000 [01:06<00:00, 44.94it/s]
-
-0.263
+Based on 3000 Monte-Carlo simulations,
+the probability of achieving a series of 43 successful games out of 48700,
+with the probability of one successful game being 0.7837,
+is approximately 0.2660
