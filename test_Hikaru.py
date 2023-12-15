@@ -32,13 +32,15 @@ def chess_com_series_probability(username, M, num_simulations):
     games = get_chess_com_stat(username)
     N = games["win"] + games["loss"] + games["draw"]
     p = games["win"] / N
-    return simulate_series(p, N, M, num_simulations)
+    return N, p, simulate_series(p, N, M, num_simulations)
 
 
 if __name__ == "__main__":
     username = "Hikaru"
     M = 43
     num_simulations = 3000
-    probability = chess_com_series_probability(username, M, num_simulations)
-    print(probability)
-
+    N, p, probability = chess_com_series_probability(username, M, num_simulations)
+    print(f"Based on {num_simulations} Monte-Carlo simulations,")
+    print(f"the probability of achieving a series of {M} successful games out of {N},")
+    print(f"with the probability of one successful game being {p:.4f},")
+    print(f"is approximately {probability:.4f}")
